@@ -66,10 +66,10 @@ export const authSlice = createAppSlice({
     meTC: create.asyncThunk(
       async (_arg, { dispatch, rejectWithValue }) => {
         try {
-          dispatch(setAppStatusAC({ status: 'loading' }))
+          dispatch(setAppStatusAC({ status: "loading" }))
           const res = await authApi.me()
           if (res.data.resultCode === ResultCode.Success) {
-            dispatch(setAppStatusAC({ status: 'succeeded' }))
+            dispatch(setAppStatusAC({ status: "succeeded" }))
             return { isLoggedIn: true }
           } else {
             handleServerAppError(res.data, dispatch)
@@ -84,7 +84,7 @@ export const authSlice = createAppSlice({
         fulfilled: (state, action) => {
           state.isLoggedIn = action.payload.isLoggedIn
         },
-      }
+      },
     ),
   }),
 })
