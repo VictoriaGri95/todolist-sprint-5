@@ -35,7 +35,13 @@ export const TaskItem = ({ task, todolist }: Props) => {
   }
 
   const changeTaskTitle = (title: string) => {
-    dispatch(updateTaskTC({ todolistId: todolist.id, taskId: task.id, domainModel: { title } }))
+    dispatch(
+      updateTaskTC({
+        todolistId: todolist.id,
+        taskId: task.id,
+        domainModel: { title },
+      }),
+    )
   }
 
   const isTaskCompleted = task.status === TaskStatus.Completed

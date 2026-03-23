@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router"
 
 export const Path = {
   Main: "/",
-  Login: "login",
+  Login: "/login",
   NotFound: "*",
 } as const
 
